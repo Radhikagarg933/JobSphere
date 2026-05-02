@@ -1,0 +1,41 @@
+{% if industry_browse %}
+<section class="bg-gradient-to-br from-slate-50 via-indigo-50/40 to-blue-50/40 relative overflow-hidden border-y border-indigo-100/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+        <div class="premium-section p-6 md:p-8">
+        <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 text-center mb-2">
+            Browse by Industry
+        </h2>
+        <p class="text-center text-gray-600 text-sm max-w-2xl mx-auto mb-8">
+            Based on your companies’ industry field — counts reflect active jobs from employers in each industry.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for row in industry_browse %}
+            <a href="{% url 'jobs:job_list' %}?industry={{ row.name|urlencode }}"
+               class="group relative overflow-hidden">
+                <div class="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-indigo-100/60
+                            transition-all duration-300 ease-out
+                            hover:shadow-2xl hover:scale-[1.02] hover:border-indigo-200 relative z-10">
+                    <div class="relative mb-4">
+                        <div class="w-14 h-14 mx-auto bg-gradient-to-br from-indigo-500 to-blue-600
+                                  rounded-xl flex items-center justify-center transform
+                                  transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                            <i class="fas fa-industry text-xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                            {{ row.name }}
+                        </h3>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+                                   bg-indigo-50 text-indigo-700 group-hover:bg-indigo-100 transition-colors">
+                            {{ row.job_count }} job{{ row.job_count|pluralize }}
+                        </span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</section>
+{% endif %}

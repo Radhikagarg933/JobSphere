@@ -1,0 +1,7 @@
+<h2>Upload Jobs (Excel)</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="file" accept=".xlsx" required>
+  <button type="submit">Upload Jobs</button>
+</form>

@@ -1,0 +1,96 @@
+{% load static %}
+<footer class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white mt-auto relative overflow-hidden">
+    <!-- Decorative Top Border -->
+    <div class="h-1 bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500"></div>
+    <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-indigo-500/15 blur-3xl"></div>
+    <div class="absolute -bottom-28 -right-20 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Job Seekers -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-300">
+                    For Job Seekers
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="{% url 'jobs:job_list' %}" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Browse Jobs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'jobs:categories' %}" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Categories
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'jobs:companies' %}" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Companies
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Employers -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-fuchsia-300">
+                    For Employers
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="{% url 'jobs:post_job' %}" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Post a Job
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'dashboard:employer_dashboard' %}" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Employer Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Quick Links & Social -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 to-pink-300">
+                    Connect With Us
+                </h3>
+                <!-- Social Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-sky-400 to-cyan-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                </div>
+                <!-- Quick Links -->
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Terms of Service
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center">
+                            <span class="mr-2">→</span>Privacy Policy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-16 pt-8 border-t border-indigo-400/25">
+            <p class="text-center text-slate-300 text-sm">
+                © {% now "Y" %} JobPortal. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>

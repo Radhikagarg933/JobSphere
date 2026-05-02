@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Verify OTP - Job Portal{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gray-50/50 p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-md bg-white rounded-xl p-8 relative
+                before:absolute before:inset-0 before:-z-10 before:rounded-xl before:p-1
+                before:bg-gradient-to-r before:from-indigo-500 before:via-blue-500 before:to-purple-500
+                before:animate-border-glow
+                after:absolute after:inset-0 after:-z-10 after:rounded-xl after:bg-white">
+
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 
+                       text-transparent bg-clip-text animate-gradient-x">
+                Enter OTP
+            </h2>
+            <p class="mt-2 text-sm text-gray-600">
+                We sent a 6-digit code to <span class="font-medium text-gray-800">{{ email }}</span>
+            </p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="mb-4 p-4 rounded-lg {% if message.tags == 'error' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" class="space-y-5">
+            {% csrf_token %}
+
+            <div>
+                <label for="otp" class="block text-sm font-medium text-gray-700">OTP</label>
+                <input
+                    type="text"
+                    id="otp"
+                    name="otp"
+                    inputmode="numeric"
+                    autocomplete="one-time-code"
+                    maxlength="6"
+                    pattern="[0-9]{6}"
+                    placeholder="123456"
+                    class="mt-1 block w-full tracking-[0.35em] text-center px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm
+                           focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:border-blue-400"
+                    required
+                >
+                <p class="mt-2 text-xs text-gray-500">Code expires in 10 minutes.</p>
+            </div>
+
+            <button type="submit"
+                    class="w-full py-3 px-4 rounded-lg text-white text-sm font-medium
+                           bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500
+                           hover:from-indigo-600 hover:via-blue-600 hover:to-purple-600
+                           transform hover:scale-[1.02] transition-all duration-200">
+                Verify & Continue
+            </button>
+        </form>
+
+        <div class="mt-5 text-center">
+            <a href="{% url 'accounts:otp_resend' %}"
+               class="text-sm text-blue-600 hover:text-purple-600 transition-colors hover:underline">
+                Resend OTP
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

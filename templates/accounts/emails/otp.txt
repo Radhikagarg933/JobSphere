@@ -1,0 +1,8 @@
+{{ app_name }} verification code
+
+Your OTP is: {{ otp }}
+
+It expires in {{ expires_minutes }} minutes.
+
+If you didn’t request this, you can ignore this email.
+
