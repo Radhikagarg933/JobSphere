@@ -27,11 +27,6 @@ JobSphere is a full-stack recruitment platform built using Django and MySQL that
 * Manage Posted Jobs and Applications
 * View Application History
 
-### 📧 Notifications
-
-* OTP Verification Emails
-* Automated Application Status Notifications
-* Real-Time Email Updates using Django Signals
 
 ## 🔐 Security Features
 
