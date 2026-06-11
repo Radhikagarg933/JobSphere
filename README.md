@@ -86,7 +86,7 @@ http://127.0.0.1:8000/
 
 👉 Click below to watch the project demonstration:
 
-**[Watch Demo Video](#)**
+**[Watch Demo Video](https://youtu.be/jyAINYPbpak?si=-RZ68segt2vw-STA)**
 
 
 
